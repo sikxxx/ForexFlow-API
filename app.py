@@ -25,6 +25,10 @@ def get_exchange_rate(base: str, target: str):
         print(f"Error fetching {symbol}: {e}")
         return None
 
+@app.route("/", methods=["GET"])
+def main():
+    return "Welcome to ForexAPI"
+
 @app.route('/exchange', methods=['GET'])
 def exchange_rate():
     base = request.args.get('base')
